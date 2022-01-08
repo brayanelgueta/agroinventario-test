@@ -1,0 +1,52 @@
+.navbar{
+    background-color: rgb(102, 102, 102);
+}
+
+.navbar ul{
+    margin: 0;
+    padding-left: 0;
+    display: flex;
+    list-style: none;
+}
+
+.navbar ul li{
+    
+    padding: 1rem 2rem;
+    color: #fff;
+    border-right: 1px solid #000;
+}
+
+.navbar ul li:hover{
+    background-color: rgb(226, 131, 56);
+}
+.navbar ul li a{
+    text-decoration: none;
+    color:#fff;
+}
+
+/*RESPONSIVE*/
+.responsive-menu{
+    font-size: 2rem;
+    color: #fff;
+    display: none;
+}
+
+input#menu{
+    display: none;
+}
+
+
+@media (max-width: 600px) {
+    .responsive-menu{
+        display: flex;
+        justify-content: flex-end;
+        padding: 0.5rem;
+    }
+    .navbar ul{
+        display: none;
+    }
+    input#menu:checked ~ ul {
+        display: block;
+    }
+}
+

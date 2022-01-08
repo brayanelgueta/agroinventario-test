@@ -1,0 +1,21 @@
+.footer{
+    background-color: rgb(52, 52, 52);
+    color: #fff;
+    height: 4rem;
+    width: 100%;
+    position: absolute;
+    bottom: -13rem;
+}   
+
+.footer p{
+    text-align: center;
+}
+.footer p span{
+    color: rgb(226, 131, 56);
+}
+
+@media (max-width: 800px){
+    .footer{
+        bottom: auto;
+    }
+}
