@@ -8,8 +8,17 @@ class Mark extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'name', 'logo'
+    ];
 
-    public function mark(){
-        
+    public function model(){
+        return $this->hasMany('App\Models\Mod');
     }
+
+    public function car(){
+        return $this->belongsTo('App\Models\Car');
+    }
+
+
 }

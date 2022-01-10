@@ -50,4 +50,14 @@ class CarController extends Controller
         }
     }
   
+    public function query(Request $request){
+        try{
+            if($request){
+                return Car::query($request->query);
+            }
+        }catch(\Exception $e){
+            return response()->json(['status'=> 'error', 'message'=> $e->getMessage()]);
+        }
+      
+    }
 }

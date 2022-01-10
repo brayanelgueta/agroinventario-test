@@ -14,16 +14,20 @@ class CreateMarksTable extends Migration
     public function up()
     {
         Schema::create('marks', function (Blueprint $table) {
-            $table->id();
+            $table->id('mark_id');
             $table->string('name');
-            $table->string('logo');
+            $table->binary('logo');
 
-            $table->foreign('model_id')
-            ->references('id')->on('models')
-            ->onDelete('cascade')
-            ->onUpdate('cascade');
-
+            $table->integer('model_id')->unsigned();
+            
             $table->timestamps();
+        });
+
+        Schema::table('marks', function (Blueprint $table){
+            $table->foreign('model_id')
+                ->references('model_id')->on('models')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
         });
     }
 

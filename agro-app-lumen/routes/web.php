@@ -23,4 +23,7 @@ $router->group(['prefix' => 'api'], function() use ($router) {
     $router->post('/cars', 'CarController@store');
     $router->put('/cars/{id}', 'CarController@update');
     $router->delete('/cars/{id}', 'CarController@destroy');
+
+    //Filter
+    $router->get('/cars/query="{query}"', 'CarController@query');
 });
